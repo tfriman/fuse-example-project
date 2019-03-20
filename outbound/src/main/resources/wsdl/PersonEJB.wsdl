@@ -1,0 +1,2431 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+             xmlns:tns="http://webservice.index.mdm.sun.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns="http://schemas.xmlsoap.org/wsdl/" name="PersonEJBService"
+             targetNamespace="http://webservice.index.mdm.sun.com/">
+    <types>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                    xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+                    xmlns:tns="http://webservice.index.mdm.sun.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                    xmlns="http://schemas.xmlsoap.org/wsdl/">
+
+            <xsd:import namespace="http://webservice.index.mdm.sun.com/"
+                        schemaLocation="http://localhost:8082/cxf/PersonEJBService/PersonEJB?xsd=../xsd/mdm.xsd"/>
+
+        </xsd:schema>
+    </types>
+    <message name="getEnterpriseRecords">
+        <part element="tns:getEnterpriseRecords" name="parameters">
+        </part>
+    </message>
+    <message name="getEUIDsResponse">
+        <part element="tns:getEUIDsResponse" name="parameters">
+        </part>
+    </message>
+    <message name="mergeEnterpriseRecordWithOverwrites">
+        <part element="tns:mergeEnterpriseRecordWithOverwrites" name="parameters">
+        </part>
+    </message>
+    <message name="executeMatchUpdateResponse">
+        <part element="tns:executeMatchUpdateResponse" name="parameters">
+        </part>
+    </message>
+    <message name="transferSystemRecordUID">
+        <part element="tns:transferSystemRecordUID" name="parameters">
+        </part>
+    </message>
+    <message name="getLIDs">
+        <part element="tns:getLIDs" name="parameters">
+        </part>
+    </message>
+    <message name="getSBRs">
+        <part element="tns:getSBRs" name="parameters">
+        </part>
+    </message>
+    <message name="getLastSysInfoLogEntry">
+        <part element="tns:getLastSysInfoLogEntry" name="parameters">
+        </part>
+    </message>
+    <message name="getRevisionNumberResponse">
+        <part element="tns:getRevisionNumberResponse" name="parameters">
+        </part>
+    </message>
+    <message name="checkForOverlayResponse">
+        <part element="tns:checkForOverlayResponse" name="parameters">
+        </part>
+    </message>
+    <message name="updateSystemRecordResponse">
+        <part element="tns:updateSystemRecordResponse" name="parameters">
+        </part>
+    </message>
+    <message name="getActiveEUID">
+        <part element="tns:getActiveEUID" name="parameters">
+        </part>
+    </message>
+    <message name="getEnterpriseRecordByLIDResponse">
+        <part element="tns:getEnterpriseRecordByLIDResponse" name="parameters">
+        </part>
+    </message>
+    <message name="getSBRResponse">
+        <part element="tns:getSBRResponse" name="parameters">
+        </part>
+    </message>
+    <message name="lookupResourceResponse">
+        <part element="tns:lookupResourceResponse" name="parameters">
+        </part>
+    </message>
+    <message name="getCodeDescription">
+        <part element="tns:getCodeDescription" name="parameters">
+        </part>
+    </message>
+    <message name="executeCustomLogicResponse">
+        <part element="tns:executeCustomLogicResponse" name="parameters">
+        </part>
+    </message>
+    <message name="getCodesByTypeResponse">
+        <part element="tns:getCodesByTypeResponse" name="parameters">
+        </part>
+    </message>
+    <message name="addSystemRecordResponse">
+        <part element="tns:addSystemRecordResponse" name="parameters">
+        </part>
+    </message>
+    <message name="lookupObjectDefinition">
+        <part element="tns:lookupObjectDefinition" name="parameters">
+        </part>
+    </message>
+    <message name="recalculateMatch">
+        <part element="tns:recalculateMatch" name="parameters">
+        </part>
+    </message>
+    <message name="getEnterpriseRecordStatusResponse">
+        <part element="tns:getEnterpriseRecordStatusResponse" name="parameters">
+        </part>
+    </message>
+    <message name="splitSystemRecord">
+        <part element="tns:splitSystemRecord" name="parameters">
+        </part>
+    </message>
+    <message name="lookupSystemDefinitionResponse">
+        <part element="tns:lookupSystemDefinitionResponse" name="parameters">
+        </part>
+    </message>
+    <message name="activateEnterpriseRecord">
+        <part element="tns:activateEnterpriseRecord" name="parameters">
+        </part>
+    </message>
+    <message name="getLIDsByStatus">
+        <part element="tns:getLIDsByStatus" name="parameters">
+        </part>
+    </message>
+    <message name="lookupApplicationConfig">
+        <part element="tns:lookupApplicationConfig" name="parameters">
+        </part>
+    </message>
+    <message name="getRevisionNumber">
+        <part element="tns:getRevisionNumber" name="parameters">
+        </part>
+    </message>
+    <message name="undoSystemObjectUpdate">
+        <part element="tns:undoSystemObjectUpdate" name="parameters">
+        </part>
+    </message>
+    <message name="lookupSystemRecordUIDsResponse">
+        <part element="tns:lookupSystemRecordUIDsResponse" name="parameters">
+        </part>
+    </message>
+    <message name="mergeMultipleEnterpriseRecords">
+        <part element="tns:mergeMultipleEnterpriseRecords" name="parameters">
+        </part>
+    </message>
+    <message name="getSystemRecordsByEUID">
+        <part element="tns:getSystemRecordsByEUID" name="parameters">
+        </part>
+    </message>
+    <message name="getSystemRecordsByEUIDStatusResponse">
+        <part element="tns:getSystemRecordsByEUIDStatusResponse" name="parameters">
+        </part>
+    </message>
+    <message name="executeMatch">
+        <part element="tns:executeMatch" name="parameters">
+        </part>
+    </message>
+    <message name="mergeMultipleEnterpriseRecordsResponse">
+        <part element="tns:mergeMultipleEnterpriseRecordsResponse" name="parameters">
+        </part>
+    </message>
+    <message name="getActiveEUIDResponse">
+        <part element="tns:getActiveEUIDResponse" name="parameters">
+        </part>
+    </message>
+    <message name="getLIDsByStatusResponse">
+        <part element="tns:getLIDsByStatusResponse" name="parameters">
+        </part>
+    </message>
+    <message name="transferSystemRecordUIDResponse">
+        <part element="tns:transferSystemRecordUIDResponse" name="parameters">
+        </part>
+    </message>
+    <message name="lookupPotentialDuplicatesResponse">
+        <part element="tns:lookupPotentialDuplicatesResponse" name="parameters">
+        </part>
+    </message>
+    <message name="addOrUpdateSystemRecordResponse">
+        <part element="tns:addOrUpdateSystemRecordResponse" name="parameters">
+        </part>
+    </message>
+    <message name="getSystemRecordHistory">
+        <part element="tns:getSystemRecordHistory" name="parameters">
+        </part>
+    </message>
+    <message name="addSystemRecord">
+        <part element="tns:addSystemRecord" name="parameters">
+        </part>
+    </message>
+    <message name="lookupObjectDefinitionResponse">
+        <part element="tns:lookupObjectDefinitionResponse" name="parameters">
+        </part>
+    </message>
+    <message name="unmergeEnterpriseRecordResponse">
+        <part element="tns:unmergeEnterpriseRecordResponse" name="parameters">
+        </part>
+    </message>
+    <message name="transferSystemRecord">
+        <part element="tns:transferSystemRecord" name="parameters">
+        </part>
+    </message>
+    <message name="getMergedEUIDs">
+        <part element="tns:getMergedEUIDs" name="parameters">
+        </part>
+    </message>
+    <message name="getCodeDescriptionResponse">
+        <part element="tns:getCodeDescriptionResponse" name="parameters">
+        </part>
+    </message>
+    <message name="lookupSystemDefinition">
+        <part element="tns:lookupSystemDefinition" name="parameters">
+        </part>
+    </message>
+    <message name="recalculateMatchResponse">
+        <part element="tns:recalculateMatchResponse" name="parameters">
+        </part>
+    </message>
+    <message name="ProcessingException">
+        <part element="tns:ProcessingException" name="fault">
+        </part>
+    </message>
+    <message name="getEnterpriseRecordStatus">
+        <part element="tns:getEnterpriseRecordStatus" name="parameters">
+        </part>
+    </message>
+    <message name="mergeEnterpriseRecord">
+        <part element="tns:mergeEnterpriseRecord" name="parameters">
+        </part>
+    </message>
+    <message name="getMergedEUIDsResponse">
+        <part element="tns:getMergedEUIDsResponse" name="parameters">
+        </part>
+    </message>
+    <message name="assignRefObjectNodesResponse">
+        <part element="tns:assignRefObjectNodesResponse" name="parameters">
+        </part>
+    </message>
+    <message name="lookupResource">
+        <part element="tns:lookupResource" name="parameters">
+        </part>
+    </message>
+    <message name="CodeLookupException">
+        <part element="tns:CodeLookupException" name="fault">
+        </part>
+    </message>
+    <message name="addOrUpdateSystemRecord">
+        <part element="tns:addOrUpdateSystemRecord" name="parameters">
+        </part>
+    </message>
+    <message name="deactivateSystemRecord">
+        <part element="tns:deactivateSystemRecord" name="parameters">
+        </part>
+    </message>
+    <message name="updateEnterpriseRecord">
+        <part element="tns:updateEnterpriseRecord" name="parameters">
+        </part>
+    </message>
+    <message name="getSystemRecordsByEUIDResponse">
+        <part element="tns:getSystemRecordsByEUIDResponse" name="parameters">
+        </part>
+    </message>
+    <message name="compareRecords">
+        <part element="tns:compareRecords" name="parameters">
+        </part>
+    </message>
+    <message name="getSystemRecord">
+        <part element="tns:getSystemRecord" name="parameters">
+        </part>
+    </message>
+    <message name="getEnterpriseRecordByLID">
+        <part element="tns:getEnterpriseRecordByLID" name="parameters">
+        </part>
+    </message>
+    <message name="undoSystemObjectUpdateResponse">
+        <part element="tns:undoSystemObjectUpdateResponse" name="parameters">
+        </part>
+    </message>
+    <message name="compareRecordsResponse">
+        <part element="tns:compareRecordsResponse" name="parameters">
+        </part>
+    </message>
+    <message name="resolvePotentialDuplicateResponse">
+        <part element="tns:resolvePotentialDuplicateResponse" name="parameters">
+        </part>
+    </message>
+    <message name="getSBR">
+        <part element="tns:getSBR" name="parameters">
+        </part>
+    </message>
+    <message name="lookupApplicationConfigResponse">
+        <part element="tns:lookupApplicationConfigResponse" name="parameters">
+        </part>
+    </message>
+    <message name="assignRefObjectNode">
+        <part element="tns:assignRefObjectNode" name="parameters">
+        </part>
+    </message>
+    <message name="getLastSysInfoLogEntryResponse">
+        <part element="tns:getLastSysInfoLogEntryResponse" name="parameters">
+        </part>
+    </message>
+    <message name="checkForOverlay">
+        <part element="tns:checkForOverlay" name="parameters">
+        </part>
+    </message>
+    <message name="getLIDsResponse">
+        <part element="tns:getLIDsResponse" name="parameters">
+        </part>
+    </message>
+    <message name="updateSystemRecord">
+        <part element="tns:updateSystemRecord" name="parameters">
+        </part>
+    </message>
+    <message name="unmergeSystemRecordResponse">
+        <part element="tns:unmergeSystemRecordResponse" name="parameters">
+        </part>
+    </message>
+    <message name="getCodesByType">
+        <part element="tns:getCodesByType" name="parameters">
+        </part>
+    </message>
+    <message name="mergeEnterpriseRecordWithImageResponse">
+        <part element="tns:mergeEnterpriseRecordWithImageResponse" name="parameters">
+        </part>
+    </message>
+    <message name="lookupSystemDefinitionsResponse">
+        <part element="tns:lookupSystemDefinitionsResponse" name="parameters">
+        </part>
+    </message>
+    <message name="getSBRHistoryResponse">
+        <part element="tns:getSBRHistoryResponse" name="parameters">
+        </part>
+    </message>
+    <message name="search">
+        <part element="tns:search" name="parameters">
+        </part>
+    </message>
+    <message name="getSystemRecordStatusResponse">
+        <part element="tns:getSystemRecordStatusResponse" name="parameters">
+        </part>
+    </message>
+    <message name="getMultipleLIDs">
+        <part element="tns:getMultipleLIDs" name="parameters">
+        </part>
+    </message>
+    <message name="getEUID">
+        <part element="tns:getEUID" name="parameters">
+        </part>
+    </message>
+    <message name="mergeSystemRecordWithImageResponse">
+        <part element="tns:mergeSystemRecordWithImageResponse" name="parameters">
+        </part>
+    </message>
+    <message name="UserException">
+        <part element="tns:UserException" name="fault">
+        </part>
+    </message>
+    <message name="lookupLIDsResponse">
+        <part element="tns:lookupLIDsResponse" name="parameters">
+        </part>
+    </message>
+    <message name="getSystemRecordsByEUIDStatus">
+        <part element="tns:getSystemRecordsByEUIDStatus" name="parameters">
+        </part>
+    </message>
+    <message name="mergeSystemRecordResponse">
+        <part element="tns:mergeSystemRecordResponse" name="parameters">
+        </part>
+    </message>
+    <message name="PageException">
+        <part element="tns:PageException" name="fault">
+        </part>
+    </message>
+    <message name="getSystemRecordStatus">
+        <part element="tns:getSystemRecordStatus" name="parameters">
+        </part>
+    </message>
+    <message name="unmergeEnterpriseRecord">
+        <part element="tns:unmergeEnterpriseRecord" name="parameters">
+        </part>
+    </message>
+    <message name="mergeEnterpriseRecordWithImage">
+        <part element="tns:mergeEnterpriseRecordWithImage" name="parameters">
+        </part>
+    </message>
+    <message name="lookupSystemDefinitions">
+        <part element="tns:lookupSystemDefinitions" name="parameters">
+        </part>
+    </message>
+    <message name="unmergeSystemRecord">
+        <part element="tns:unmergeSystemRecord" name="parameters">
+        </part>
+    </message>
+    <message name="executeCustomLogic">
+        <part element="tns:executeCustomLogic" name="parameters">
+        </part>
+    </message>
+    <message name="unresolvePotentialDuplicateResponse">
+        <part element="tns:unresolvePotentialDuplicateResponse" name="parameters">
+        </part>
+    </message>
+    <message name="lookupLIDBySUID">
+        <part element="tns:lookupLIDBySUID" name="parameters">
+        </part>
+    </message>
+    <message name="lookupLIDBySUIDResponse">
+        <part element="tns:lookupLIDBySUIDResponse" name="parameters">
+        </part>
+    </message>
+    <message name="splitSystemRecordResponse">
+        <part element="tns:splitSystemRecordResponse" name="parameters">
+        </part>
+    </message>
+    <message name="unresolvePotentialDuplicate">
+        <part element="tns:unresolvePotentialDuplicate" name="parameters">
+        </part>
+    </message>
+    <message name="getEnterpriseRecordByEUID">
+        <part element="tns:getEnterpriseRecordByEUID" name="parameters">
+        </part>
+    </message>
+    <message name="lookupSystemUIDDefinitions">
+        <part element="tns:lookupSystemUIDDefinitions" name="parameters">
+        </part>
+    </message>
+    <message name="resolvePotentialDuplicate">
+        <part element="tns:resolvePotentialDuplicate" name="parameters">
+        </part>
+    </message>
+    <message name="getSBRHistory">
+        <part element="tns:getSBRHistory" name="parameters">
+        </part>
+    </message>
+    <message name="mergeEnterpriseRecordResponse">
+        <part element="tns:mergeEnterpriseRecordResponse" name="parameters">
+        </part>
+    </message>
+    <message name="mergeSystemRecord">
+        <part element="tns:mergeSystemRecord" name="parameters">
+        </part>
+    </message>
+    <message name="getEnterpriseRecordsResponse">
+        <part element="tns:getEnterpriseRecordsResponse" name="parameters">
+        </part>
+    </message>
+    <message name="activateEnterpriseRecordResponse">
+        <part element="tns:activateEnterpriseRecordResponse" name="parameters">
+        </part>
+    </message>
+    <message name="getEnterpriseRecordByEUIDResponse">
+        <part element="tns:getEnterpriseRecordByEUIDResponse" name="parameters">
+        </part>
+    </message>
+    <message name="assignRefObjectNodeResponse">
+        <part element="tns:assignRefObjectNodeResponse" name="parameters">
+        </part>
+    </message>
+    <message name="deactivateSystemRecordResponse">
+        <part element="tns:deactivateSystemRecordResponse" name="parameters">
+        </part>
+    </message>
+    <message name="deactivateEnterpriseRecordResponse">
+        <part element="tns:deactivateEnterpriseRecordResponse" name="parameters">
+        </part>
+    </message>
+    <message name="lookupSystemRecordUIDs">
+        <part element="tns:lookupSystemRecordUIDs" name="parameters">
+        </part>
+    </message>
+    <message name="activateSystemRecordResponse">
+        <part element="tns:activateSystemRecordResponse" name="parameters">
+        </part>
+    </message>
+    <message name="assignRefObjectNodes">
+        <part element="tns:assignRefObjectNodes" name="parameters">
+        </part>
+    </message>
+    <message name="lookupPotentialDuplicates">
+        <part element="tns:lookupPotentialDuplicates" name="parameters">
+        </part>
+    </message>
+    <message name="getComparison">
+        <part element="tns:getComparison" name="parameters">
+        </part>
+    </message>
+    <message name="deactivateEnterpriseRecord">
+        <part element="tns:deactivateEnterpriseRecord" name="parameters">
+        </part>
+    </message>
+    <message name="executeMatchResponse">
+        <part element="tns:executeMatchResponse" name="parameters">
+        </part>
+    </message>
+    <message name="undoAssumedMatchResponse">
+        <part element="tns:undoAssumedMatchResponse" name="parameters">
+        </part>
+    </message>
+    <message name="lookupLIDs">
+        <part element="tns:lookupLIDs" name="parameters">
+        </part>
+    </message>
+    <message name="transferSystemRecordResponse">
+        <part element="tns:transferSystemRecordResponse" name="parameters">
+        </part>
+    </message>
+    <message name="getEUIDs">
+        <part element="tns:getEUIDs" name="parameters">
+        </part>
+    </message>
+    <message name="mergeSystemRecordWithImage">
+        <part element="tns:mergeSystemRecordWithImage" name="parameters">
+        </part>
+    </message>
+    <message name="getMultipleLIDsResponse">
+        <part element="tns:getMultipleLIDsResponse" name="parameters">
+        </part>
+    </message>
+    <message name="getSBRsResponse">
+        <part element="tns:getSBRsResponse" name="parameters">
+        </part>
+    </message>
+    <message name="getSystemRecordResponse">
+        <part element="tns:getSystemRecordResponse" name="parameters">
+        </part>
+    </message>
+    <message name="lookupSystemUIDDefinitionsResponse">
+        <part element="tns:lookupSystemUIDDefinitionsResponse" name="parameters">
+        </part>
+    </message>
+    <message name="getEUIDResponse">
+        <part element="tns:getEUIDResponse" name="parameters">
+        </part>
+    </message>
+    <message name="activateSystemRecord">
+        <part element="tns:activateSystemRecord" name="parameters">
+        </part>
+    </message>
+    <message name="getComparisonResponse">
+        <part element="tns:getComparisonResponse" name="parameters">
+        </part>
+    </message>
+    <message name="undoAssumedMatch">
+        <part element="tns:undoAssumedMatch" name="parameters">
+        </part>
+    </message>
+    <message name="mergeEnterpriseRecordWithOverwritesResponse">
+        <part element="tns:mergeEnterpriseRecordWithOverwritesResponse" name="parameters">
+        </part>
+    </message>
+    <message name="searchResponse">
+        <part element="tns:searchResponse" name="parameters">
+        </part>
+    </message>
+    <message name="executeMatchUpdate">
+        <part element="tns:executeMatchUpdate" name="parameters">
+        </part>
+    </message>
+    <message name="getSystemRecordHistoryResponse">
+        <part element="tns:getSystemRecordHistoryResponse" name="parameters">
+        </part>
+    </message>
+    <message name="updateEnterpriseRecordResponse">
+        <part element="tns:updateEnterpriseRecordResponse" name="parameters">
+        </part>
+    </message>
+    <portType name="PersonEJB">
+        <operation name="search">
+            <input message="tns:search" wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/searchRequest">
+            </input>
+            <output message="tns:searchResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/searchResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/search/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/search/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="checkForOverlay">
+            <input message="tns:checkForOverlay"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/checkForOverlayRequest">
+            </input>
+            <output message="tns:checkForOverlayResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/checkForOverlayResponse">
+            </output>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/checkForOverlay/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="lookupApplicationConfig">
+            <input message="tns:lookupApplicationConfig"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/lookupApplicationConfigRequest">
+            </input>
+            <output message="tns:lookupApplicationConfigResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/lookupApplicationConfigResponse">
+            </output>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/lookupApplicationConfig/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="unmergeSystemRecord">
+            <input message="tns:unmergeSystemRecord"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/unmergeSystemRecordRequest">
+            </input>
+            <output message="tns:unmergeSystemRecordResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/unmergeSystemRecordResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/unmergeSystemRecord/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/unmergeSystemRecord/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="lookupPotentialDuplicates">
+            <input message="tns:lookupPotentialDuplicates"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/lookupPotentialDuplicatesRequest">
+            </input>
+            <output message="tns:lookupPotentialDuplicatesResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/lookupPotentialDuplicatesResponse">
+            </output>
+            <fault message="tns:PageException" name="PageException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/lookupPotentialDuplicates/Fault/PageException">
+            </fault>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/lookupPotentialDuplicates/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/lookupPotentialDuplicates/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="assignRefObjectNodes">
+            <input message="tns:assignRefObjectNodes"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/assignRefObjectNodesRequest">
+            </input>
+            <output message="tns:assignRefObjectNodesResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/assignRefObjectNodesResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/assignRefObjectNodes/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/assignRefObjectNodes/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="lookupSystemRecordUIDs">
+            <input message="tns:lookupSystemRecordUIDs"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/lookupSystemRecordUIDsRequest">
+            </input>
+            <output message="tns:lookupSystemRecordUIDsResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/lookupSystemRecordUIDsResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/lookupSystemRecordUIDs/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/lookupSystemRecordUIDs/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="deactivateEnterpriseRecord">
+            <input message="tns:deactivateEnterpriseRecord"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/deactivateEnterpriseRecordRequest">
+            </input>
+            <output message="tns:deactivateEnterpriseRecordResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/deactivateEnterpriseRecordResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/deactivateEnterpriseRecord/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/deactivateEnterpriseRecord/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="getEnterpriseRecordStatus">
+            <input message="tns:getEnterpriseRecordStatus"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getEnterpriseRecordStatusRequest">
+            </input>
+            <output message="tns:getEnterpriseRecordStatusResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getEnterpriseRecordStatusResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getEnterpriseRecordStatus/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getEnterpriseRecordStatus/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="activateSystemRecord">
+            <input message="tns:activateSystemRecord"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/activateSystemRecordRequest">
+            </input>
+            <output message="tns:activateSystemRecordResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/activateSystemRecordResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/activateSystemRecord/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/activateSystemRecord/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="resolvePotentialDuplicate">
+            <input message="tns:resolvePotentialDuplicate"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/resolvePotentialDuplicateRequest">
+            </input>
+            <output message="tns:resolvePotentialDuplicateResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/resolvePotentialDuplicateResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/resolvePotentialDuplicate/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/resolvePotentialDuplicate/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="getEUIDs">
+            <input message="tns:getEUIDs" wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getEUIDsRequest">
+            </input>
+            <output message="tns:getEUIDsResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getEUIDsResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getEUIDs/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getEUIDs/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="getCodeDescription">
+            <input message="tns:getCodeDescription"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getCodeDescriptionRequest">
+            </input>
+            <output message="tns:getCodeDescriptionResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getCodeDescriptionResponse">
+            </output>
+            <fault message="tns:CodeLookupException" name="CodeLookupException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getCodeDescription/Fault/CodeLookupException">
+            </fault>
+        </operation>
+        <operation name="updateEnterpriseRecord">
+            <input message="tns:updateEnterpriseRecord"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/updateEnterpriseRecordRequest">
+            </input>
+            <output message="tns:updateEnterpriseRecordResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/updateEnterpriseRecordResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/updateEnterpriseRecord/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/updateEnterpriseRecord/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="undoSystemObjectUpdate">
+            <input message="tns:undoSystemObjectUpdate"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/undoSystemObjectUpdateRequest">
+            </input>
+            <output message="tns:undoSystemObjectUpdateResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/undoSystemObjectUpdateResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/undoSystemObjectUpdate/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/undoSystemObjectUpdate/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="lookupSystemDefinitions">
+            <input message="tns:lookupSystemDefinitions"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/lookupSystemDefinitionsRequest">
+            </input>
+            <output message="tns:lookupSystemDefinitionsResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/lookupSystemDefinitionsResponse">
+            </output>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/lookupSystemDefinitions/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="addOrUpdateSystemRecord">
+            <input message="tns:addOrUpdateSystemRecord"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/addOrUpdateSystemRecordRequest">
+            </input>
+            <output message="tns:addOrUpdateSystemRecordResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/addOrUpdateSystemRecordResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/addOrUpdateSystemRecord/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/addOrUpdateSystemRecord/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="executeMatchUpdate">
+            <input message="tns:executeMatchUpdate"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/executeMatchUpdateRequest">
+            </input>
+            <output message="tns:executeMatchUpdateResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/executeMatchUpdateResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/executeMatchUpdate/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/executeMatchUpdate/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="getCodesByType">
+            <input message="tns:getCodesByType"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getCodesByTypeRequest">
+            </input>
+            <output message="tns:getCodesByTypeResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getCodesByTypeResponse">
+            </output>
+            <fault message="tns:CodeLookupException" name="CodeLookupException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getCodesByType/Fault/CodeLookupException">
+            </fault>
+        </operation>
+        <operation name="getSBR">
+            <input message="tns:getSBR" wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getSBRRequest">
+            </input>
+            <output message="tns:getSBRResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getSBRResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getSBR/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getSBR/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="getSystemRecordsByEUIDStatus">
+            <input message="tns:getSystemRecordsByEUIDStatus"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getSystemRecordsByEUIDStatusRequest">
+            </input>
+            <output message="tns:getSystemRecordsByEUIDStatusResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getSystemRecordsByEUIDStatusResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getSystemRecordsByEUIDStatus/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getSystemRecordsByEUIDStatus/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="getMultipleLIDs">
+            <input message="tns:getMultipleLIDs"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getMultipleLIDsRequest">
+            </input>
+            <output message="tns:getMultipleLIDsResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getMultipleLIDsResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getMultipleLIDs/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getMultipleLIDs/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="mergeMultipleEnterpriseRecords">
+            <input message="tns:mergeMultipleEnterpriseRecords"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/mergeMultipleEnterpriseRecordsRequest">
+            </input>
+            <output message="tns:mergeMultipleEnterpriseRecordsResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/mergeMultipleEnterpriseRecordsResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/mergeMultipleEnterpriseRecords/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/mergeMultipleEnterpriseRecords/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="lookupSystemDefinition">
+            <input message="tns:lookupSystemDefinition"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/lookupSystemDefinitionRequest">
+            </input>
+            <output message="tns:lookupSystemDefinitionResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/lookupSystemDefinitionResponse">
+            </output>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/lookupSystemDefinition/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="mergeEnterpriseRecordWithImage">
+            <input message="tns:mergeEnterpriseRecordWithImage"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/mergeEnterpriseRecordWithImageRequest">
+            </input>
+            <output message="tns:mergeEnterpriseRecordWithImageResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/mergeEnterpriseRecordWithImageResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/mergeEnterpriseRecordWithImage/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/mergeEnterpriseRecordWithImage/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="compareRecords">
+            <input message="tns:compareRecords"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/compareRecordsRequest">
+            </input>
+            <output message="tns:compareRecordsResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/compareRecordsResponse">
+            </output>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/compareRecords/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="getEnterpriseRecordByEUID">
+            <input message="tns:getEnterpriseRecordByEUID"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getEnterpriseRecordByEUIDRequest">
+            </input>
+            <output message="tns:getEnterpriseRecordByEUIDResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getEnterpriseRecordByEUIDResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getEnterpriseRecordByEUID/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getEnterpriseRecordByEUID/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="mergeEnterpriseRecord">
+            <input message="tns:mergeEnterpriseRecord"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/mergeEnterpriseRecordRequest">
+            </input>
+            <output message="tns:mergeEnterpriseRecordResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/mergeEnterpriseRecordResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/mergeEnterpriseRecord/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/mergeEnterpriseRecord/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="unmergeEnterpriseRecord">
+            <input message="tns:unmergeEnterpriseRecord"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/unmergeEnterpriseRecordRequest">
+            </input>
+            <output message="tns:unmergeEnterpriseRecordResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/unmergeEnterpriseRecordResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/unmergeEnterpriseRecord/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/unmergeEnterpriseRecord/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="getSBRHistory">
+            <input message="tns:getSBRHistory"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getSBRHistoryRequest">
+            </input>
+            <output message="tns:getSBRHistoryResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getSBRHistoryResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getSBRHistory/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getSBRHistory/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="getSBRs">
+            <input message="tns:getSBRs" wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getSBRsRequest">
+            </input>
+            <output message="tns:getSBRsResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getSBRsResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getSBRs/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getSBRs/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="executeCustomLogic">
+            <input message="tns:executeCustomLogic"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/executeCustomLogicRequest">
+            </input>
+            <output message="tns:executeCustomLogicResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/executeCustomLogicResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/executeCustomLogic/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/executeCustomLogic/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="executeMatch">
+            <input message="tns:executeMatch"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/executeMatchRequest">
+            </input>
+            <output message="tns:executeMatchResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/executeMatchResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/executeMatch/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/executeMatch/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="addSystemRecord">
+            <input message="tns:addSystemRecord"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/addSystemRecordRequest">
+            </input>
+            <output message="tns:addSystemRecordResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/addSystemRecordResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/addSystemRecord/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/addSystemRecord/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="getSystemRecordsByEUID">
+            <input message="tns:getSystemRecordsByEUID"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getSystemRecordsByEUIDRequest">
+            </input>
+            <output message="tns:getSystemRecordsByEUIDResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getSystemRecordsByEUIDResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getSystemRecordsByEUID/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getSystemRecordsByEUID/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="splitSystemRecord">
+            <input message="tns:splitSystemRecord"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/splitSystemRecordRequest">
+            </input>
+            <output message="tns:splitSystemRecordResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/splitSystemRecordResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/splitSystemRecord/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/splitSystemRecord/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="getActiveEUID">
+            <input message="tns:getActiveEUID"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getActiveEUIDRequest">
+            </input>
+            <output message="tns:getActiveEUIDResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getActiveEUIDResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getActiveEUID/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getActiveEUID/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="mergeSystemRecord">
+            <input message="tns:mergeSystemRecord"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/mergeSystemRecordRequest">
+            </input>
+            <output message="tns:mergeSystemRecordResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/mergeSystemRecordResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/mergeSystemRecord/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/mergeSystemRecord/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="activateEnterpriseRecord">
+            <input message="tns:activateEnterpriseRecord"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/activateEnterpriseRecordRequest">
+            </input>
+            <output message="tns:activateEnterpriseRecordResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/activateEnterpriseRecordResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/activateEnterpriseRecord/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/activateEnterpriseRecord/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="transferSystemRecordUID">
+            <input message="tns:transferSystemRecordUID"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/transferSystemRecordUIDRequest">
+            </input>
+            <output message="tns:transferSystemRecordUIDResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/transferSystemRecordUIDResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/transferSystemRecordUID/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/transferSystemRecordUID/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="getLIDs">
+            <input message="tns:getLIDs" wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getLIDsRequest">
+            </input>
+            <output message="tns:getLIDsResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getLIDsResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getLIDs/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getLIDs/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="lookupResource">
+            <input message="tns:lookupResource"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/lookupResourceRequest">
+            </input>
+            <output message="tns:lookupResourceResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/lookupResourceResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/lookupResource/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/lookupResource/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="getComparison">
+            <input message="tns:getComparison"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getComparisonRequest">
+            </input>
+            <output message="tns:getComparisonResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getComparisonResponse">
+            </output>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getComparison/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="getLastSysInfoLogEntry">
+            <input message="tns:getLastSysInfoLogEntry"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getLastSysInfoLogEntryRequest">
+            </input>
+            <output message="tns:getLastSysInfoLogEntryResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getLastSysInfoLogEntryResponse">
+            </output>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getLastSysInfoLogEntry/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="lookupLIDBySUID">
+            <input message="tns:lookupLIDBySUID"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/lookupLIDBySUIDRequest">
+            </input>
+            <output message="tns:lookupLIDBySUIDResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/lookupLIDBySUIDResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/lookupLIDBySUID/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/lookupLIDBySUID/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="getSystemRecordHistory">
+            <input message="tns:getSystemRecordHistory"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getSystemRecordHistoryRequest">
+            </input>
+            <output message="tns:getSystemRecordHistoryResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getSystemRecordHistoryResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getSystemRecordHistory/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getSystemRecordHistory/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="lookupObjectDefinition">
+            <input message="tns:lookupObjectDefinition"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/lookupObjectDefinitionRequest">
+            </input>
+            <output message="tns:lookupObjectDefinitionResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/lookupObjectDefinitionResponse">
+            </output>
+            <fault message="tns:PageException" name="PageException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/lookupObjectDefinition/Fault/PageException">
+            </fault>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/lookupObjectDefinition/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/lookupObjectDefinition/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="getSystemRecord">
+            <input message="tns:getSystemRecord"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getSystemRecordRequest">
+            </input>
+            <output message="tns:getSystemRecordResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getSystemRecordResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getSystemRecord/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getSystemRecord/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="recalculateMatch">
+            <input message="tns:recalculateMatch"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/recalculateMatchRequest">
+            </input>
+            <output message="tns:recalculateMatchResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/recalculateMatchResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/recalculateMatch/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/recalculateMatch/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="mergeEnterpriseRecordWithOverwrites">
+            <input message="tns:mergeEnterpriseRecordWithOverwrites"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/mergeEnterpriseRecordWithOverwritesRequest">
+            </input>
+            <output message="tns:mergeEnterpriseRecordWithOverwritesResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/mergeEnterpriseRecordWithOverwritesResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/mergeEnterpriseRecordWithOverwrites/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/mergeEnterpriseRecordWithOverwrites/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="getSystemRecordStatus">
+            <input message="tns:getSystemRecordStatus"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getSystemRecordStatusRequest">
+            </input>
+            <output message="tns:getSystemRecordStatusResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getSystemRecordStatusResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getSystemRecordStatus/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getSystemRecordStatus/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="undoAssumedMatch">
+            <input message="tns:undoAssumedMatch"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/undoAssumedMatchRequest">
+            </input>
+            <output message="tns:undoAssumedMatchResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/undoAssumedMatchResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/undoAssumedMatch/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/undoAssumedMatch/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="lookupLIDs">
+            <input message="tns:lookupLIDs"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/lookupLIDsRequest">
+            </input>
+            <output message="tns:lookupLIDsResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/lookupLIDsResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/lookupLIDs/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/lookupLIDs/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="assignRefObjectNode">
+            <input message="tns:assignRefObjectNode"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/assignRefObjectNodeRequest">
+            </input>
+            <output message="tns:assignRefObjectNodeResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/assignRefObjectNodeResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/assignRefObjectNode/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/assignRefObjectNode/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="updateSystemRecord">
+            <input message="tns:updateSystemRecord"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/updateSystemRecordRequest">
+            </input>
+            <output message="tns:updateSystemRecordResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/updateSystemRecordResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/updateSystemRecord/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/updateSystemRecord/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="transferSystemRecord">
+            <input message="tns:transferSystemRecord"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/transferSystemRecordRequest">
+            </input>
+            <output message="tns:transferSystemRecordResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/transferSystemRecordResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/transferSystemRecord/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/transferSystemRecord/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="getEUID">
+            <input message="tns:getEUID" wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getEUIDRequest">
+            </input>
+            <output message="tns:getEUIDResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getEUIDResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getEUID/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getEUID/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="deactivateSystemRecord">
+            <input message="tns:deactivateSystemRecord"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/deactivateSystemRecordRequest">
+            </input>
+            <output message="tns:deactivateSystemRecordResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/deactivateSystemRecordResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/deactivateSystemRecord/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/deactivateSystemRecord/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="getMergedEUIDs">
+            <input message="tns:getMergedEUIDs"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getMergedEUIDsRequest">
+            </input>
+            <output message="tns:getMergedEUIDsResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getMergedEUIDsResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getMergedEUIDs/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getMergedEUIDs/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="getLIDsByStatus">
+            <input message="tns:getLIDsByStatus"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getLIDsByStatusRequest">
+            </input>
+            <output message="tns:getLIDsByStatusResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getLIDsByStatusResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getLIDsByStatus/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getLIDsByStatus/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="unresolvePotentialDuplicate">
+            <input message="tns:unresolvePotentialDuplicate"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/unresolvePotentialDuplicateRequest">
+            </input>
+            <output message="tns:unresolvePotentialDuplicateResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/unresolvePotentialDuplicateResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/unresolvePotentialDuplicate/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/unresolvePotentialDuplicate/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="lookupSystemUIDDefinitions">
+            <input message="tns:lookupSystemUIDDefinitions"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/lookupSystemUIDDefinitionsRequest">
+            </input>
+            <output message="tns:lookupSystemUIDDefinitionsResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/lookupSystemUIDDefinitionsResponse">
+            </output>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/lookupSystemUIDDefinitions/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="getEnterpriseRecordByLID">
+            <input message="tns:getEnterpriseRecordByLID"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getEnterpriseRecordByLIDRequest">
+            </input>
+            <output message="tns:getEnterpriseRecordByLIDResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getEnterpriseRecordByLIDResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getEnterpriseRecordByLID/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getEnterpriseRecordByLID/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="getEnterpriseRecords">
+            <input message="tns:getEnterpriseRecords"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getEnterpriseRecordsRequest">
+            </input>
+            <output message="tns:getEnterpriseRecordsResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getEnterpriseRecordsResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getEnterpriseRecords/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getEnterpriseRecords/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="mergeSystemRecordWithImage">
+            <input message="tns:mergeSystemRecordWithImage"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/mergeSystemRecordWithImageRequest">
+            </input>
+            <output message="tns:mergeSystemRecordWithImageResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/mergeSystemRecordWithImageResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/mergeSystemRecordWithImage/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/mergeSystemRecordWithImage/Fault/ProcessingException">
+            </fault>
+        </operation>
+        <operation name="getRevisionNumber">
+            <input message="tns:getRevisionNumber"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getRevisionNumberRequest">
+            </input>
+            <output message="tns:getRevisionNumberResponse"
+                    wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getRevisionNumberResponse">
+            </output>
+            <fault message="tns:UserException" name="UserException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getRevisionNumber/Fault/UserException">
+            </fault>
+            <fault message="tns:ProcessingException" name="ProcessingException"
+                   wsam:Action="http://webservice.index.mdm.sun.com/PersonEJB/getRevisionNumber/Fault/ProcessingException">
+            </fault>
+        </operation>
+    </portType>
+    <binding name="PersonEJBPortBinding" type="tns:PersonEJB">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="search">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="checkForOverlay">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="lookupApplicationConfig">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="unmergeSystemRecord">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="lookupPotentialDuplicates">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="PageException">
+                <soap:fault name="PageException" use="literal"/>
+            </fault>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="assignRefObjectNodes">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="lookupSystemRecordUIDs">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="deactivateEnterpriseRecord">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getEnterpriseRecordStatus">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="activateSystemRecord">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="resolvePotentialDuplicate">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getEUIDs">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getCodeDescription">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="CodeLookupException">
+                <soap:fault name="CodeLookupException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="updateEnterpriseRecord">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="undoSystemObjectUpdate">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="lookupSystemDefinitions">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="addOrUpdateSystemRecord">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="executeMatchUpdate">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getCodesByType">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="CodeLookupException">
+                <soap:fault name="CodeLookupException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getSBR">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getSystemRecordsByEUIDStatus">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getMultipleLIDs">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="mergeMultipleEnterpriseRecords">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="lookupSystemDefinition">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="mergeEnterpriseRecordWithImage">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="compareRecords">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getEnterpriseRecordByEUID">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="mergeEnterpriseRecord">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="unmergeEnterpriseRecord">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getSBRHistory">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getSBRs">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="executeCustomLogic">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="executeMatch">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="addSystemRecord">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getSystemRecordsByEUID">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="splitSystemRecord">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getActiveEUID">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="mergeSystemRecord">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="activateEnterpriseRecord">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="transferSystemRecordUID">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getLIDs">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="lookupResource">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getComparison">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getLastSysInfoLogEntry">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="lookupLIDBySUID">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getSystemRecordHistory">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="lookupObjectDefinition">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="PageException">
+                <soap:fault name="PageException" use="literal"/>
+            </fault>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getSystemRecord">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="recalculateMatch">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="mergeEnterpriseRecordWithOverwrites">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getSystemRecordStatus">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="undoAssumedMatch">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="lookupLIDs">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="assignRefObjectNode">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="updateSystemRecord">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="transferSystemRecord">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getEUID">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="deactivateSystemRecord">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getMergedEUIDs">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getLIDsByStatus">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="unresolvePotentialDuplicate">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="lookupSystemUIDDefinitions">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getEnterpriseRecordByLID">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getEnterpriseRecords">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="mergeSystemRecordWithImage">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="getRevisionNumber">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="UserException">
+                <soap:fault name="UserException" use="literal"/>
+            </fault>
+            <fault name="ProcessingException">
+                <soap:fault name="ProcessingException" use="literal"/>
+            </fault>
+        </operation>
+    </binding>
+    <service name="PersonEJBService">
+        <port binding="tns:PersonEJBPortBinding" name="PersonEJBPort">
+            <soap:address location="http://localhost:8181/cxf/PersonEJBService/PersonEJB"/>
+        </port>
+    </service>
+</definitions>
