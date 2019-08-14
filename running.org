@@ -1,0 +1,74 @@
+oc secrets new-sshauth repo-at-github --ssh-privatekey=$HOME/.ssh/repo-at-github
+
+oc secrets link builder repo-at-github
+
+oc annotate secret/repo-at-github \
+    'build.openshift.io/source-secret-match-uri-4=ssh://git@github.com/tfriman/fuse-example-project.git'
+
+oc set build-secret --source bc/integrationtestserver repo-at-github
+
+oc set build-secret --source bc/inbound repo-at-github
+
+https://access.redhat.com/terms-based-registry/#/token/tfriman-ocp/openshift-secret
+
+oc create -f  ~/11009103\|tfriman-ocp-secret.yaml
+
+oc secrets link default 11009103-tfriman-ocp-pull-secret --for=pull
+
+oc secrets link builder 11009103-tfriman-ocp-pull-secret
+
+https://access.redhat.com/documentation/en-us/red_hat_amq/7.3/html-single/deploying_amq_broker_on_openshift_container_platform/index#installing-broker-ocp_broker-ocp
+
+oc replace --force  -f \
+https://raw.githubusercontent.com/jboss-container-images/jboss-amq-7-broker-openshift-image/73-7.3.0.GA/amq-broker-7-image-streams.yaml
+
+for template in amq-broker-73-basic.yaml \
+amq-broker-73-ssl.yaml \
+amq-broker-73-custom.yaml \
+amq-broker-73-persistence.yaml \
+amq-broker-73-persistence-ssl.yaml \
+amq-broker-73-persistence-clustered.yaml \
+amq-broker-73-persistence-clustered-ssl.yaml;
+ do
+
+ oc replace --force -f \
+https://raw.githubusercontent.com/jboss-container-images/jboss-amq-7-broker-openshift-image/73-7.3.0.GA/templates/${template}
+ done
+
+oc import-image amq-broker-7/amq-broker-73-openshift --from=registry.redhat.io/amq-broker-7/amq-broker-73-openshift --confirm
+
+oc new-app --template=amq-broker-73-basic \
+   -e AMQ_PROTOCOL=openwire,amqp \
+   -e AMQ_USER=admin \
+   -e AMQ_PASSWORD=admin \
+   -e AMQ_ROLE=admin
+
+oc new-build redhat-openjdk18-openshift:1.4~ssh://git@github.com:tfriman/fuse-example-project.git#all-in-one --context-dir=integrationtestserver --name=integrationtestserver
+
+oc new-build redhat-openjdk18-openshift:1.4~ssh://git@github.com/tfriman/fuse-example-project.git#all-in-one --context-dir=inbound --name=inbound
+
+oc new-build redhat-openjdk18-openshift:1.4~ssh://git@github.com/tfriman/fuse-example-project.git#all-in-one --context-dir=outbound --name=outbound
+
+oc new-build redhat-openjdk18-openshift:1.4~ssh://git@github.com/tfriman/fuse-example-project.git#all-in-one --context-dir=xlate --name=xlate
+
+Or with open repo:
+
+oc new-build redhat-openjdk18-openshift:1.4~https://github.com/tfriman/fuse-example-project.git#all-in-one --context-dir=integrationtestserver --name=integrationtestserver
+
+oc new-build redhat-openjdk18-openshift:1.4~https://github.com/tfriman/fuse-example-project.git#all-in-one --context-dir=inbound --name=inbound
+
+oc new-build redhat-openjdk18-openshift:1.4~https://github.com/tfriman/fuse-example-project.git#all-in-one --context-dir=outbound --name=outbound
+
+oc new-build redhat-openjdk18-openshift:1.4~https://github.com/tfriman/fuse-example-project.git#all-in-one --context-dir=xlate --name=xlate
+
+
+oc new-app --image-stream=integrationtestserver
+oc new-app --image-stream=outbound
+oc new-app --image-stream=xlate
+oc new-app --image-stream=inbound
+oc expose svc/inbound
+
+oc set env dc/outbound nextgate.host=integrationtestserver
+
+export inbound_url=$(oc get route inbound --template '{{.spec.host}}')
+cd inbound && ./curl.sh
