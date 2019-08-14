@@ -1,6 +1,5 @@
 package com.customer.nextgate;
 
-import com.sun.mdm.index.webservice.ExecuteMatchUpdate;
 import org.apache.camel.Message;
 import org.apache.camel.builder.DefaultErrorHandlerBuilder;
 import org.apache.camel.builder.RouteBuilder;
@@ -41,7 +40,7 @@ public class OutboundRouteBuilder extends RouteBuilder {
                 .log(DEBUG, "after unmarshal ${body}")
                 .process(exchange -> {
                     Message exchangeIn = exchange.getIn();
-                    ExecuteMatchUpdate in = exchangeIn.getBody(ExecuteMatchUpdate.class);
+                    com.sun.mdm.index.webservice.ExecuteMatchUpdate in = exchangeIn.getBody(com.sun.mdm.index.webservice.ExecuteMatchUpdate.class);
                     List<Object> list = new ArrayList<>();
                     list.add(in.getCallerInfo());
                     list.add(in.getSysObjBean());
