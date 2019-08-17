@@ -9,4 +9,4 @@ export outbound_project=outbound
 
 export xlate_project=xlate
 
-export testserver_project=testserver
+export testserver_project=integrationtestserver

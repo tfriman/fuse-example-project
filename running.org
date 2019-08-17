@@ -9,7 +9,7 @@ oc set build-secret --source bc/integrationtestserver repo-at-github
 
 oc set build-secret --source bc/inbound repo-at-github
 
-https://access.redhat.com/terms-based-registry/#/token/tfriman-ocp/openshift-secret
+Https://access.redhat.com/terms-based-registry/#/token/tfriman-ocp/openshift-secret
 
 oc create -f  ~/11009103\|tfriman-ocp-secret.yaml
 
@@ -43,6 +43,7 @@ oc new-app --template=amq-broker-73-basic \
    -e AMQ_PASSWORD=admin \
    -e AMQ_ROLE=admin
 
+# these do not work for some reason with secrets... 
 oc new-build redhat-openjdk18-openshift:1.4~ssh://git@github.com:tfriman/fuse-example-project.git#all-in-one --context-dir=integrationtestserver --name=integrationtestserver
 
 oc new-build redhat-openjdk18-openshift:1.4~ssh://git@github.com/tfriman/fuse-example-project.git#all-in-one --context-dir=inbound --name=inbound
