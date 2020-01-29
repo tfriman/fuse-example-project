@@ -1,9 +1,7 @@
 package com.company.app.test;
 
-import com.sun.mdm.index.webservice.PersonEJB;
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.apache.activemq.camel.component.ActiveMQComponent;
-import org.apache.camel.component.cxf.CxfEndpoint;
 import org.apache.camel.component.jms.JmsConfiguration;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;

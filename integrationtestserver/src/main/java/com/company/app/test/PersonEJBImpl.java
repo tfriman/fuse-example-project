@@ -1,12 +1,12 @@
 package com.company.app.test;
 
-import com.sun.mdm.index.webservice.*;
 import org.apache.camel.CamelContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.sun.mdm.index.webservice.*;
 
 public class PersonEJBImpl implements PersonEJB {
     private static final Logger LOG = LoggerFactory.getLogger(PersonEJBImpl.class);
@@ -18,12 +18,12 @@ public class PersonEJBImpl implements PersonEJB {
     // In reality it would look in a database to see if there is a match,
     // but since we're just mocking the functionality it's enough to compare to a known value
     @Override
-    public MatchColResult executeMatchUpdate(CallerInfo callerInfo, SystemPerson sysObjBean) throws ProcessingException_Exception, UserException_Exception {
+    public MatchColResult executeMatchUpdate(CallerInfo callerInfo, SystemPerson sysObjBean)  {
         LOG.info("Received payload in Nextgate Test Server");
         LOG.info("Caller Info: Application = " + callerInfo.getApplication() + " User = " + callerInfo.getAuthUser());
         LOG.info("SystemPerson: FirstName = " + sysObjBean.getPerson().getFirstName() + " Gender = " + sysObjBean.getPerson().getGender());
 
-        Integer resultCode = -1;
+        int resultCode;
         if ( sysObjBean.getPerson().getFirstName().equals("First") ) {
           resultCode = 1; //success
         } else {
@@ -40,20 +40,16 @@ public class PersonEJBImpl implements PersonEJB {
     }
 
     @Override
-    public List<ScoreElement> search(CallerInfo callerInfo, PersonBean objBean, EoSearchOptions searchOptions) throws ProcessingException_Exception,
-                    UserException_Exception {
+    public List<ScoreElement> search(CallerInfo callerInfo, PersonBean objBean, EoSearchOptions searchOptions) {
         LOG.info("Searching for score elements, this method will only return canned data");
-        List<ScoreElement> elements = generateScoreElementData();
 
-        return elements;
+        return generateScoreElementData();
     }
 
     @Override
-    public EnterprisePerson getEnterpriseRecordByEUID(CallerInfo callerInfo, String euid, boolean allowMergedEuid) throws ProcessingException_Exception,
-                    UserException_Exception {
+    public EnterprisePerson getEnterpriseRecordByEUID(CallerInfo callerInfo, String euid, boolean allowMergedEuid) {
         List<EnterprisePerson> enterprisePersons = generateEnterprisePersonData();
-        EnterprisePerson person = enterprisePersons.get(0);
-        return person;
+        return enterprisePersons.get(0);
 
     }
 
@@ -62,414 +58,401 @@ public class PersonEJBImpl implements PersonEJB {
      * ---------------------------------------------
      */
     @Override
-    public OverlayDetectorResult checkForOverlay(PersonBean beforeObj, PersonBean afterObj) throws ProcessingException_Exception {
+    public OverlayDetectorResult checkForOverlay(PersonBean beforeObj, PersonBean afterObj) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
     public MergePersonResult unmergeSystemRecord(CallerInfo callerInfo, String systemCode, String sourceLID, String destLID, boolean calculateOnly)
-                    throws ProcessingException_Exception, UserException_Exception {
+                     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public List<ApplicationConfigEntry> lookupApplicationConfig() throws ProcessingException_Exception {
+    public List<ApplicationConfigEntry> lookupApplicationConfig() {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
     public List<PotentialDuplicateResult> lookupPotentialDuplicates(CallerInfo callerInfo, PotentialDuplicateSearchObjectBean potentialDuplicateSearchObjectBean)
-                    throws ProcessingException_Exception, UserException_Exception, PageException_Exception {
+                     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
     public void assignRefObjectNodes(CallerInfo callerInfo, String systemCode, String localid, String objectType, List<String> referIds)
-                    throws ProcessingException_Exception, UserException_Exception {
+                     {
         // TODO Auto-generated method stub
 
     }
 
     @Override
-    public List<SystemObjectUIDBean> lookupSystemRecordUIDs(CallerInfo callerInfo, String systemCode, String lid) throws ProcessingException_Exception,
-                    UserException_Exception {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public void deactivateEnterpriseRecord(CallerInfo callerInfo, String euid) throws ProcessingException_Exception, UserException_Exception {
-        // TODO Auto-generated method stub
-
-    }
-
-    @Override
-    public String getEnterpriseRecordStatus(CallerInfo callerInfo, String euid) throws ProcessingException_Exception, UserException_Exception {
+    public List<SystemObjectUIDBean> lookupSystemRecordUIDs(CallerInfo callerInfo, String systemCode, String lid) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public void activateSystemRecord(CallerInfo callerInfo, String systemCode, String localid) throws ProcessingException_Exception, UserException_Exception {
+    public void deactivateEnterpriseRecord(CallerInfo callerInfo, String euid)  {
         // TODO Auto-generated method stub
 
     }
 
     @Override
-    public void resolvePotentialDuplicate(CallerInfo callerInfo, String potentialDuplicateId, boolean permanentResolve) throws ProcessingException_Exception,
-                    UserException_Exception {
-        // TODO Auto-generated method stub
-
-    }
-
-    @Override
-    public List<String> getEUIDs(CallerInfo callerInfo, String systemCode, String localid, int maxRecs) throws ProcessingException_Exception,
-                    UserException_Exception {
+    public String getEnterpriseRecordStatus(CallerInfo callerInfo, String euid)  {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public String getCodeDescription(String type, String code) throws CodeLookupException_Exception {
+    public void activateSystemRecord(CallerInfo callerInfo, String systemCode, String localid)  {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void resolvePotentialDuplicate(CallerInfo callerInfo, String potentialDuplicateId, boolean permanentResolve) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public List<String> getEUIDs(CallerInfo callerInfo, String systemCode, String localid, int maxRecs) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public void updateEnterpriseRecord(CallerInfo callerInfo, EnterprisePerson eoBean) throws ProcessingException_Exception, UserException_Exception {
-        // TODO Auto-generated method stub
-
-    }
-
-    @Override
-    public List<SystemDefinition> lookupSystemDefinitions() throws ProcessingException_Exception {
+    public String getCodeDescription(String type, String code) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public void undoSystemObjectUpdate(CallerInfo callerInfo, String systemCode, String lid, String transNum) throws ProcessingException_Exception,
-                    UserException_Exception {
+    public void updateEnterpriseRecord(CallerInfo callerInfo, EnterprisePerson eoBean)  {
         // TODO Auto-generated method stub
 
     }
 
     @Override
-    public void addOrUpdateSystemRecord(CallerInfo callerInfo, String euid, SystemPerson sysObjBean, boolean checkDups) throws ProcessingException_Exception,
-                    UserException_Exception {
-        // TODO Auto-generated method stub
-
-    }
-
-    @Override
-    public List<CodeDescription> getCodesByType(String type) throws CodeLookupException_Exception {
+    public List<SystemDefinition> lookupSystemDefinitions() {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public SbrPerson getSBR(CallerInfo callerInfo, String euid) throws ProcessingException_Exception, UserException_Exception {
+    public void undoSystemObjectUpdate(CallerInfo callerInfo, String systemCode, String lid, String transNum) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void addOrUpdateSystemRecord(CallerInfo callerInfo, String euid, SystemPerson sysObjBean, boolean checkDups) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public List<CodeDescription> getCodesByType(String type) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public List<SystemPerson> getSystemRecordsByEUIDStatus(CallerInfo callerInfo, String euid, String status) throws ProcessingException_Exception,
-                    UserException_Exception {
+    public SbrPerson getSBR(CallerInfo callerInfo, String euid)  {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public List<SystemPerson> getSystemRecordsByEUIDStatus(CallerInfo callerInfo, String euid, String status) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
     public List<SystemPersonPKArray> getMultipleLIDs(CallerInfo callerInfo, List<String> euids, boolean returnEuidsAsLids)
-                    throws ProcessingException_Exception, UserException_Exception {
+                     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
     public List<MergePersonResult> mergeMultipleEnterpriseRecords(CallerInfo callerInfo, List<String> sourceEUIDs, EnterprisePerson destinationEO,
-                    List<String> srcRevisionNumbers, String destRevisionNumber, boolean calculateOnly, boolean setSourceSystemStatusToMerged)
-                    throws ProcessingException_Exception, UserException_Exception {
+                    List<String> srcRevisionNumbers, String destRevisionNumber, boolean calculateOnly, boolean setSourceSystemStatusToMerged) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public SystemDefinition lookupSystemDefinition(String systemCode) throws ProcessingException_Exception {
+    public SystemDefinition lookupSystemDefinition(String systemCode) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
     public MergePersonResult mergeEnterpriseRecordWithImage(CallerInfo callerInfo, String fromEUID, EnterprisePerson destinationEO, boolean calculateOnly,
-                    boolean setSourceSystemStatusToMerged) throws ProcessingException_Exception, UserException_Exception {
+                    boolean setSourceSystemStatusToMerged)  {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public MatchWeight compareRecords(PersonBean record1, PersonBean record2) throws ProcessingException_Exception {
+    public MatchWeight compareRecords(PersonBean record1, PersonBean record2) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public MergePersonResult unmergeEnterpriseRecord(CallerInfo callerInfo, String euid, boolean calculateOnly) throws ProcessingException_Exception,
-                    UserException_Exception {
+    public MergePersonResult unmergeEnterpriseRecord(CallerInfo callerInfo, String euid, boolean calculateOnly) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
     public MergePersonResult mergeEnterpriseRecord(CallerInfo callerInfo, String fromEUID, String toEUID, boolean calculateOnly,
-                    boolean setSourceSystemStatusToMerged) throws ProcessingException_Exception, UserException_Exception {
+                    boolean setSourceSystemStatusToMerged)  {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public List<EnterprisePerson> getSBRs(CallerInfo callerInfo, List<String> euids, boolean allowMergedEuid) throws ProcessingException_Exception,
-                    UserException_Exception {
+    public List<EnterprisePerson> getSBRs(CallerInfo callerInfo, List<String> euids, boolean allowMergedEuid) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public SbrPersonHistory getSBRHistory(CallerInfo callerInfo, String euid, String transnum) throws ProcessingException_Exception, UserException_Exception {
+    public SbrPersonHistory getSBRHistory(CallerInfo callerInfo, String euid, String transnum)  {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
     public CustomLogicResponse executeCustomLogic(CallerInfo callerInfo, String script, List<CustomLogicParameter> parameters)
-                    throws ProcessingException_Exception, UserException_Exception {
+                     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public MatchColResult executeMatch(CallerInfo callerInfo, SystemPerson sysObjBean) throws ProcessingException_Exception, UserException_Exception {
+    public MatchColResult executeMatch(CallerInfo callerInfo, SystemPerson sysObjBean)  {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public void addSystemRecord(CallerInfo callerInfo, String euid, SystemPerson sysObjBean) throws ProcessingException_Exception, UserException_Exception {
+    public void addSystemRecord(CallerInfo callerInfo, String euid, SystemPerson sysObjBean)  {
         // TODO Auto-generated method stub
 
     }
 
     @Override
-    public List<SystemPerson> getSystemRecordsByEUID(CallerInfo callerInfo, String euid) throws ProcessingException_Exception, UserException_Exception {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public String splitSystemRecord(CallerInfo callerInfo, String systemCode, String localid, String euid) throws ProcessingException_Exception,
-                    UserException_Exception {
+    public List<SystemPerson> getSystemRecordsByEUID(CallerInfo callerInfo, String euid)  {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public String getActiveEUID(CallerInfo callerInfo, String euid) throws ProcessingException_Exception, UserException_Exception {
+    public String splitSystemRecord(CallerInfo callerInfo, String systemCode, String localid, String euid) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public String getActiveEUID(CallerInfo callerInfo, String euid)  {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
     public MergePersonResult mergeSystemRecord(CallerInfo callerInfo, String systemCode, String sourceLID, String destLID, boolean calculateOnly)
-                    throws ProcessingException_Exception, UserException_Exception {
+                     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public void activateEnterpriseRecord(CallerInfo callerInfo, String euid) throws ProcessingException_Exception, UserException_Exception {
+    public void activateEnterpriseRecord(CallerInfo callerInfo, String euid)  {
         // TODO Auto-generated method stub
 
     }
 
     @Override
     public void transferSystemRecordUID(CallerInfo callerInfo, String destSystemCode, String destLID, String uidType, String uid)
-                    throws ProcessingException_Exception, UserException_Exception {
+                     {
         // TODO Auto-generated method stub
 
     }
 
     @Override
-    public List<SystemPersonPK> getLIDs(CallerInfo callerInfo, String euid) throws ProcessingException_Exception, UserException_Exception {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public byte[] lookupResource(CallerInfo callerInfo, String resourceName) throws ProcessingException_Exception, UserException_Exception {
+    public List<SystemPersonPK> getLIDs(CallerInfo callerInfo, String euid)  {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public MatchWeight getComparison(CallerInfo callerInfo, long comparisonId) throws ProcessingException_Exception {
+    public byte[] lookupResource(CallerInfo callerInfo, String resourceName)  {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public SystemPersonPK lookupLIDBySUID(CallerInfo callerInfo, String uidType, String uid) throws ProcessingException_Exception, UserException_Exception {
+    public MatchWeight getComparison(CallerInfo callerInfo, long comparisonId) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public String getLastSysInfoLogEntry(CallerInfo callerInfo) throws ProcessingException_Exception {
+    public SystemPersonPK lookupLIDBySUID(CallerInfo callerInfo, String uidType, String uid)  {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public String getLastSysInfoLogEntry(CallerInfo callerInfo) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
     public SystemPersonHistory getSystemRecordHistory(CallerInfo callerInfo, String systemCode, String localid, String transnum)
-                    throws ProcessingException_Exception, UserException_Exception {
+                     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public ObjectDefinition lookupObjectDefinition() throws ProcessingException_Exception, UserException_Exception, PageException_Exception {
+    public ObjectDefinition lookupObjectDefinition()  {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public SystemPerson getSystemRecord(CallerInfo callerInfo, String systemCode, String localid) throws ProcessingException_Exception, UserException_Exception {
+    public SystemPerson getSystemRecord(CallerInfo callerInfo, String systemCode, String localid)  {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
     public MergePersonResult mergeEnterpriseRecordWithOverwrites(CallerInfo callerInfo, String fromEUID, String toEUID, boolean calculateOnly,
-                    boolean setSourceSystemStatusToMerged, List<SbrOverWriteBean> overwrite) throws ProcessingException_Exception, UserException_Exception {
+                    boolean setSourceSystemStatusToMerged, List<SbrOverWriteBean> overwrite)  {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public MatchColResult recalculateMatch(CallerInfo callerInfo, String euid) throws ProcessingException_Exception, UserException_Exception {
+    public MatchColResult recalculateMatch(CallerInfo callerInfo, String euid)  {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public String getSystemRecordStatus(CallerInfo callerInfo, String systemCode, String localid) throws ProcessingException_Exception, UserException_Exception {
+    public String getSystemRecordStatus(CallerInfo callerInfo, String systemCode, String localid)  {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
     public List<SystemPersonPK> lookupLIDs(CallerInfo callerInfo, String sourceSystemCode, String sourceLID, String destSystemCode, String status)
-                    throws ProcessingException_Exception, UserException_Exception {
+                     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public String undoAssumedMatch(CallerInfo callerInfo, String assumedMatchId) throws ProcessingException_Exception, UserException_Exception {
+    public String undoAssumedMatch(CallerInfo callerInfo, String assumedMatchId)  {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public void updateSystemRecord(CallerInfo callerInfo, SystemPerson sysObjBean) throws ProcessingException_Exception, UserException_Exception {
+    public void updateSystemRecord(CallerInfo callerInfo, SystemPerson sysObjBean)  {
         // TODO Auto-generated method stub
 
     }
 
     @Override
     public void assignRefObjectNode(CallerInfo callerInfo, String systemCode, String localid, String objectType, SystemPerson sysObjBean)
-                    throws ProcessingException_Exception, UserException_Exception {
+                     {
         // TODO Auto-generated method stub
 
     }
 
     @Override
-    public void transferSystemRecord(CallerInfo callerInfo, String toEUID, String systemCode, String localid) throws ProcessingException_Exception,
-                    UserException_Exception {
+    public void transferSystemRecord(CallerInfo callerInfo, String toEUID, String systemCode, String localid)  {
         // TODO Auto-generated method stub
 
     }
 
     @Override
-    public String getEUID(CallerInfo callerInfo, String systemCode, String localid) throws ProcessingException_Exception, UserException_Exception {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public void deactivateSystemRecord(CallerInfo callerInfo, String systemCode, String localid) throws ProcessingException_Exception, UserException_Exception {
-        // TODO Auto-generated method stub
-
-    }
-
-    @Override
-    public List<SystemPersonPK> getLIDsByStatus(CallerInfo callerInfo, String euid, String status) throws ProcessingException_Exception,
-                    UserException_Exception {
+    public String getEUID(CallerInfo callerInfo, String systemCode, String localid)  {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public List<String> getMergedEUIDs(CallerInfo callerInfo, String euid) throws ProcessingException_Exception, UserException_Exception {
+    public void deactivateSystemRecord(CallerInfo callerInfo, String systemCode, String localid)  {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public List<SystemPersonPK> getLIDsByStatus(CallerInfo callerInfo, String euid, String status)  {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public void unresolvePotentialDuplicate(CallerInfo callerInfo, String potentialDuplicateId) throws ProcessingException_Exception, UserException_Exception {
-        // TODO Auto-generated method stub
-
-    }
-
-    @Override
-    public EnterprisePerson getEnterpriseRecordByLID(CallerInfo callerInfo, String systemCode, String localid) throws ProcessingException_Exception,
-                    UserException_Exception {
+    public List<String> getMergedEUIDs(CallerInfo callerInfo, String euid)  {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public List<SystemUIDDefinition> lookupSystemUIDDefinitions() throws ProcessingException_Exception {
+    public void unresolvePotentialDuplicate(CallerInfo callerInfo, String potentialDuplicateId)  {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public EnterprisePerson getEnterpriseRecordByLID(CallerInfo callerInfo, String systemCode, String localid)  {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public List<SystemUIDDefinition> lookupSystemUIDDefinitions() {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
     public List<EnterprisePerson> getEnterpriseRecords(CallerInfo callerInfo, List<String> euids, boolean allowMergedEuid)
-                    throws ProcessingException_Exception, UserException_Exception {
+                     {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
     public MergePersonResult mergeSystemRecordWithImage(CallerInfo callerInfo, String systemCode, String sourceLID, String destLID, PersonObject destImage,
-                    boolean calculateOnly) throws ProcessingException_Exception, UserException_Exception {
+                    boolean calculateOnly)  {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public Integer getRevisionNumber(CallerInfo callerInfo, String euid) throws ProcessingException_Exception, UserException_Exception {
+    public Integer getRevisionNumber(CallerInfo callerInfo, String euid)  {
         // TODO Auto-generated method stub
         return null;
     }
 
     private List<ScoreElement> generateScoreElementData() {
-        ArrayList<ScoreElement> e = new ArrayList<ScoreElement>();
+        ArrayList<ScoreElement> e = new ArrayList<>();
 
         for (int i = 0; i < 25; i++) {
             ScoreElement element = new ScoreElement();
@@ -478,7 +461,7 @@ public class PersonEJBImpl implements PersonEJB {
             element.setDecisionResult("decision result" + i);
             element.setFalsePositiveExplanation("false positive" + i);
             element.setPotentialFalsePositive(false);
-            element.setWeight((double) i);
+            element.setWeight(i);
             element.setWeightExplanation("weight explanation" + i);
             e.add(element);
         }
@@ -486,12 +469,12 @@ public class PersonEJBImpl implements PersonEJB {
     }
 
     private List<EnterprisePerson> generateEnterprisePersonData() {
-        List<EnterprisePerson> enterprisePersons = new ArrayList<EnterprisePerson>();
+        List<EnterprisePerson> enterprisePersons = new ArrayList<>();
 
         for (int i = 0; i < 25; i++) {
             EnterprisePerson ep = new EnterprisePerson();
             ep.setEUID(i + "");
-            ep.setSBRPerson(buildSbrPerson(i));
+            ep.setSBRPerson(buildSbrPerson());
             ep.setStatus("status");
             enterprisePersons.add(ep);
         }
@@ -499,7 +482,7 @@ public class PersonEJBImpl implements PersonEJB {
         return enterprisePersons;
     }
 
-    private SbrPerson buildSbrPerson(int i) {
+    private SbrPerson buildSbrPerson() {
         SbrPerson sbr = new SbrPerson();
         sbr.setPerson(addPersonBean());
         return sbr;
