@@ -11,7 +11,7 @@
     <properties>
 	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-	<fuse.version>7.2.0.fuse-720020-redhat-00001</fuse.version>
+	<fuse.version>7.5.0.fuse-750029-redhat-00002</fuse.version>
 	<run.profiles>local</run.profiles>
     </properties>
     <dependencyManagement>
