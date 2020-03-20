@@ -1,0 +1,40 @@
+# To run this: C-b : source-file tmux-setup
+
+# set up 3/2 panes, numbering:
+# 0 | 3
+# 1 |
+# 2 | 4
+
+selectp -t 0 # select the first (0) pane
+splitw -h -p 50 # split it into two halves
+
+selectp -t 1 # select the new, second (1) pane
+splitw -v -p 50 # split it into two halves
+
+selectp -t 0 # select the first (0) pane
+splitw -v -p 30 # split it into two halves
+
+selectp -t 0 # select the first (0) pane
+
+splitw -v -p 50  # split it into two halves
+
+selectp -t 0 # select the first (0) pane
+
+# send commands
+
+selectp -t 0
+send-keys "cd inbound; read; ./curl.sh" c-m
+
+selectp -t 1
+send-keys "cd xlate; ./openshift-logs.sh" c-m
+
+selectp -t 2
+send-keys "cd outbound; ./openshift-logs.sh" c-m
+
+selectp -t 3
+send-keys "cd inbound; ./openshift-logs.sh" c-m
+
+selectp -t 4
+send-keys "cd integrationtestserver; ./openshift-logs.sh" c-m
+
+selectp -t 0
