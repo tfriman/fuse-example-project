@@ -11,10 +11,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <!--
         <fuse.version>7.9.0.fuse-sb2-790065-redhat-00001</fuse.version>
-        -->
-        <fuse.version>7.5.0.fuse-750029-redhat-00002</fuse.version>
         <run.profiles>local</run.profiles>
     </properties>
 
@@ -59,13 +56,13 @@
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-pool</artifactId>
-            <version>5.11.0.redhat-630356</version>
+            <version>5.11.0.redhat-630495</version>
         </dependency>
 
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-camel</artifactId>
-            <version>5.11.0.redhat-630356</version>
+            <version>5.11.0.redhat-630495</version>
         </dependency>
 
         <!--  Camel dependencies -->
@@ -100,13 +97,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
-            <version>1.5.16.RELEASE</version>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-test</artifactId>
-            <version>1.5.16.RELEASE</version>
         </dependency>
 
     </dependencies>
