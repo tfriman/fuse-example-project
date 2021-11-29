@@ -24,9 +24,9 @@ public class XLateRouteBuilderTest extends CamelTestSupport {
     private static final String MOCK_RESULT = "mock:result";
     private static final String MOCK_FROM = "direct:mock-from";
     private static final String MOCK_DQL = "mock:dlq";
-    private static final String DLQ_UNIT_TEST = "dlq_unit_test";
-    private static final String OUTPUT_UNIT_TEST = "output_unit_test";
-    private static final String INPUT_UNIT_TEST = "input_unit_test";
+    private static final String DLQ_UNIT_TEST = "mock:dlq_unit_test";
+    private static final String OUTPUT_UNIT_TEST = "mock:output_unit_test";
+    private static final String INPUT_UNIT_TEST = "mock:input_unit_test";
 
     @Override
     public boolean isUseAdviceWith() {
@@ -64,7 +64,7 @@ public class XLateRouteBuilderTest extends CamelTestSupport {
                     public void configure() {
                         replaceFromWith(MOCK_FROM);
 
-                        interceptSendToEndpoint("activemq:*")
+                        interceptSendToEndpoint(OUTPUT_UNIT_TEST)
                                 .skipSendToOriginalEndpoint()
                                 .to(mockEndpoint);
                     }
@@ -96,12 +96,12 @@ public class XLateRouteBuilderTest extends CamelTestSupport {
             public void configure() throws Exception {
                 replaceFromWith(MOCK_FROM);
                 // intercept sending to output queue and detour to our processor instead
-                interceptSendToEndpoint("activemq:queue:" + OUTPUT_UNIT_TEST)
+                interceptSendToEndpoint(OUTPUT_UNIT_TEST)
                         .skipSendToOriginalEndpoint()
                         .process(simulateErrorWithTranslation);
 
                 // intercept sending to dlq and detour to the mock instead
-                interceptSendToEndpoint("activemq:queue:" + DLQ_UNIT_TEST)
+                interceptSendToEndpoint(DLQ_UNIT_TEST)
                         .skipSendToOriginalEndpoint()
                         .to(mockDLQ);
             }
@@ -121,9 +121,7 @@ public class XLateRouteBuilderTest extends CamelTestSupport {
         assertEquals(4, simulateErrorWithTranslation.getCounter());
     }
 
-
     private class SimulateErrorWithTranslation implements Processor {
-
         AtomicInteger counter = new AtomicInteger(0);
         public void process(Exchange exchange) throws Exception {
             // simulate the error by thrown the exception
@@ -135,5 +133,4 @@ public class XLateRouteBuilderTest extends CamelTestSupport {
             return counter.get();
         }
     }
-
 }
