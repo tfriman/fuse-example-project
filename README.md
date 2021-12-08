@@ -51,7 +51,7 @@ Run inbound ```curl.sh``` to see "1" on the testserver log or ```curl-no-match.s
 
 ## Deployment to OpenShift
 
-Tested with OpenShift 3.11. Because of the shared com.customer.app.artifacts dependency is not found from
+Tested with OpenShift 4.8. Because of the shared com.customer.app.artifacts dependency is not found from
 public Maven repositories I ended up using binary builds. So each component has openshift-deploy.sh
 script in their root directory. AMQ should be installed, this was tested with AMQ 7.2 version.
 
@@ -75,7 +75,7 @@ oc new-app --namespace $ocp_project --template=amq-broker-72-basic \
    -e AMQ_ROLE=admin
 ```
 
-Alternative way if your cluster already has AMQ streams for some other version (tested with 6.3):
+Alternative way if your cluster already has AMQ for some other version (tested with 6.3):
 
 ```oc new-app --search amq```
 

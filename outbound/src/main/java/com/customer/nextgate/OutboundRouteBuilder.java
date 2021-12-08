@@ -30,7 +30,7 @@ public class OutboundRouteBuilder extends RouteBuilder {
                 .redeliveryPolicy(errorHandlerBuilder.getRedeliveryPolicy())
                 .handled(true)
                 .log("ConnectException occurred")
-                .to("activemq:queue:{{dql.queue}}");
+                .to("activemq:queue:{{dlq.queue}}");
 
         from("activemq:queue:{{input.queue}}")
                 .routeId(ROUTE_ID)

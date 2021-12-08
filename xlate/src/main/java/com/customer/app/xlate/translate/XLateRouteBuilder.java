@@ -26,7 +26,7 @@ public class XLateRouteBuilder extends RouteBuilder {
                 .redeliveryPolicy(errorHandlerBuilder.getRedeliveryPolicy())
                 .handled(true)
                 .log("TypeConversionException occurred ${body}")
-                .to("{{dql.queue}}");
+                .to("{{dlq.queue}}");
 
         from("{{input.queue}}")
                 .routeId(ROUTE_ID)
@@ -36,7 +36,7 @@ public class XLateRouteBuilder extends RouteBuilder {
                 .convertBodyTo(com.sun.mdm.index.webservice.ExecuteMatchUpdate.class)
                 .marshal()
                 .jaxb("com.sun.mdm.index.webservice")
-                .log(LoggingLevel.DEBUG, "after soap marshal ${body}")
+                .log(LoggingLevel.INFO, "after soap marshal ${body}")
                 .inOnly("{{output.queue}}")
                 .end();
     }
